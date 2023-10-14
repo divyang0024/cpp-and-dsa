@@ -7,8 +7,7 @@ int main()
     {
         for (int col = 1; col <= 5 - (row - 1); col += 1)
         {
-            cout << "*"
-                 << " ";
+            cout << col;
         }
         cout << endl;
     }
