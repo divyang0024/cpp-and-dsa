@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.ejs": "html",
-        ".env*": "dotenv",
-        "initializer_list": "cpp",
-        "ostream": "cpp",
-        "iostream": "cpp"
-    }
-}
