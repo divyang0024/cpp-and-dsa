@@ -160,19 +160,48 @@ void pattern8(int n)
     //   321
     //  4321
     // 54321
-    // for (int row = 1; row <= n; row++)
-    // {
-    //     for (int gap = n - row + 1; gap >= 1; gap--)
-    //     {
-    //         cout << "- ";
-    //     }
-    //     for (int col = row; col >= 1; col--)
-    //     {
-    //         cout << col << " ";
-    //     }
-    //     cout << endl;
-    // }
+    for (int row = 1; row <= n; row++)
+    {
+        for (int gap = n - row + 1; gap >= 1; gap--)
+        {
+            cout << "- ";
+        }
+        for (int col = row; col >= 1; col--)
+        {
+            cout << col << " ";
+        }
+        cout << endl;
+    }
 }
+void pattern9(int n)
+{
+    //     1
+    //    121
+    //   12321
+    //  1234321
+    // 123454321
+    for (int row = 1; row <= n; row++)
+    {
+        for (int gap = n - row + 1; gap >= 1; gap--)
+        {
+            cout << "- ";
+        }
+        int rowReq = row * 2 - 1;
+        for (int col = 1; col <= rowReq; col++)
+        {
+            if (col > (row))
+            {
+                cout << (rowReq + 1) - col << " ";
+            }
+            else
+            {
+                cout << col << " ";
+            }
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     int n;
@@ -185,5 +214,6 @@ int main()
     // pattern5(n);
     // pattern6(n);
     // pattern7(n);
-    pattern8(n);
+    // pattern8(n);
+    pattern9(n);
 }
