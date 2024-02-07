@@ -5,20 +5,25 @@ int binarySearch(int size, int elem, int array[])
 {
     int start = 0;
     int end = size - 1;
+    int flag = 0;
     while (start <= end)
     {
-        int mid = start + end / 2;
+        int mid = (start + end) / 2;
         if (array[mid] == elem)
         {
-            cout << "element is preset at : " << mid << " index.";
-            return mid;
+            cout << "element is present at : " << mid << " index.";
+            ++flag;
+            break;
         }
         else if (array[mid] < elem)
             start = mid + 1;
         else
             end = mid - 1;
     }
-    cout << "element not found";
+    if (flag == 0)
+        cout << "element not found";
+
+    return 0;
 }
 
 int main()
