@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-
-// first occurance
+// leetcode problem 34.
+//  first occurance
 int firstOccur(int size, int elem, int array[])
 {
     int first = -1;
