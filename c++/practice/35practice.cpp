@@ -24,9 +24,9 @@ int paintWallWithMinTime(int painters, int walls, int array[])
         int mid = start + (end - start) / 2; // represents time out (it is the time where each painter try to paint as many walls as they can till they run out of time).
         int count = 1;
         int time = 0;
-        for (int i = 0; i <= walls; i++)
+        for (int i = 0; i < walls; i++)
         {
-            time += time;
+            time += array[i];
             if (time > mid)
             {
                 ++count;

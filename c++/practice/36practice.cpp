@@ -26,9 +26,9 @@ int minWeighTonShipPackagesinNDays(int days, int packages, int array[])
         int count = 1;
         int weight = 0;
         cout << mid << endl;
-        for (int i = 0; i <= packages; i++)
+        for (int i = 0; i < packages; i++)
         {
-            weight += weight;
+            weight += array[i];
             if (weight > mid)
             {
                 ++count;

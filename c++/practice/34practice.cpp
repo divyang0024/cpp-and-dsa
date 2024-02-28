@@ -27,7 +27,7 @@ int bookAllocationWithLeastPageDisparityBwStudents(int students, int books, int 
             pages += array[i];
             if (pages > mid)
             {
-                count += count;
+                count += 1;
                 pages = array[i];
             }
         }
