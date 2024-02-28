@@ -29,7 +29,7 @@ int paintWallWithMinTime(int painters, int walls, int array[])
             time += time;
             if (time > mid)
             {
-                count++;
+                ++count;
                 time = array[i];
             }
         }

@@ -22,7 +22,7 @@ int minWeighTonShipPackagesinNDays(int days, int packages, int array[])
 
     while (start <= end)
     {
-        int mid = (start+end) / 2;
+        int mid = (start + end) / 2;
         int count = 1;
         int weight = 0;
         cout << mid << endl;
@@ -31,7 +31,7 @@ int minWeighTonShipPackagesinNDays(int days, int packages, int array[])
             weight += weight;
             if (weight > mid)
             {
-                count++;
+                ++count;
                 weight = array[i];
             }
         }
