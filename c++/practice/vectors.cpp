@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
     vector<int> v(5);
+    sort(v.begin(), v.end());   // sorts the array.
     v.push_back(12);            // enters a new value at the end.
     v.pop_back();               // remove the last element.
     v.erase(v.begin());         // removes the element at a particular index.
