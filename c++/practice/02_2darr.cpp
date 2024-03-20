@@ -94,6 +94,7 @@ void rowReverse(int r, int c, int arr[][3])
             end -= 1;
         }
     }
+
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
@@ -123,10 +124,8 @@ int main()
             cin >> arr[i][j];
         }
     }
-
     // cout << "enter the element you want to search";
     // cin >> elem;
-
     // searchElemIn2dArr(r, c, elem, arr);
     // add2dArr(r, c, arr);
     // maxSumRow(r, c, arr);
