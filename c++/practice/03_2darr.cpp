@@ -17,7 +17,7 @@ void printWaveForm(int r, int c, int arr[][3])
     }
 }
 
-void printSpiralForm(int r, int c, int arr[][3])
+void printSpiralForm(int r, int c, int arr[][3]) // leetcode problem 54.
 {
     int left = 0;
     int right = c - 1;
