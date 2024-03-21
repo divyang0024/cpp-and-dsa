@@ -57,6 +57,18 @@ void printSpiralForm(int r, int c, int arr[][3]) // leetcode problem 54.
     }
 }
 
+void printTransposedMatrix(int r, int c, int arr[][3])
+{
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cout << arr[j][i] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     int r, c;
@@ -76,7 +88,8 @@ int main()
     }
 
     // printWaveForm(r, c, arr);
-    printSpiralForm(r, c, arr);
+    // printSpiralForm(r, c, arr);
+    printTransposedMatrix(r, c, arr);
 
     return 0;
 }
