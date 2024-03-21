@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 
@@ -59,11 +60,60 @@ void printSpiralForm(int r, int c, int arr[][3]) // leetcode problem 54.
 
 void printTransposedMatrix(int r, int c, int arr[][3])
 {
+    for (int i = 0; i < r - 1; i++)
+    {
+        for (int j = i + 1; j < r; j++)
+        {
+            swap(arr[j][i], arr[i][j]);
+        }
+    }
     for (int i = 0; i < r; i++)
     {
-        for (int j = 0; j < c; j++)
+        for (int j = 0; j < r; j++)
         {
-            cout << arr[j][i] << " ";
+            cout << arr[i][j];
+        }
+    }
+}
+
+void rotateArrBy90Deg(int n, int arr[][3]) // leetcode problem 48
+{
+    int ans[3][3];
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            // swap(arr[(n - 1) - i][j], arr[j][i]);
+            // cout << ((n - 1) - i) << j << "->" << j << i;
+            ans[j][i] = arr[(n - 1) - i][j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << ans[i][j];
+        }
+        cout << endl;
+    }
+}
+
+void rotateArrBy180Deg(int n, int arr[][3])
+{
+    int ans[3][3];
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            // cout << ((n - 1) - i) << j << "->" << i << ((n - 1) - j);
+            ans[i][((n - 1) - j)] = arr[(n - 1) - i][j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << ans[i][j];
         }
         cout << endl;
     }
@@ -89,7 +139,8 @@ int main()
 
     // printWaveForm(r, c, arr);
     // printSpiralForm(r, c, arr);
-    printTransposedMatrix(r, c, arr);
-
+    // printTransposedMatrix(r, c, arr);
+    // rotateArrBy90Deg(r, arr);
+    rotateArrBy180Deg(r, arr);
     return 0;
 }
