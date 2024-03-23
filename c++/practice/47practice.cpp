@@ -27,6 +27,33 @@ int findThreeSum(int size, int sum, vector<int> &arr)
     return 0;
 }
 
+int findFourSum(int size, int sum, vector<int> &arr)
+{
+    sort(arr.begin(), arr.end());
+    for (int i = 0; i < size - 3; i++)
+    {
+        int ans1 = sum - arr[i];
+        for (int j = i + 1; j < size - 2; j++)
+        {
+            int ans2 = ans1 - arr[j];
+            int start = j + 1;
+            int end = size - 1;
+            while (start < end)
+            {
+                if (arr[start] + arr[end] == ans2)
+                {
+                    cout << arr[i] << "+" << arr[j] << "+" << arr[start] << "+" << arr[end] << " = " << sum << endl;
+                    return 1;
+                }
+                else if (arr[start] + arr[end] > ans2)
+                    end--;
+                else
+                    start++;
+            }
+        }
+    }
+    return 0;
+}
 int main()
 {
     int size, sum;
@@ -40,13 +67,21 @@ int main()
     }
     cout << "enter the sum : ";
     cin >> sum;
-    if (findThreeSum((size), sum, arr))
+    // if (findThreeSum((size), sum, arr))
+    // {
+    //     cout << "3 number sum exists";
+    // }
+    // else
+    // {
+    //     cout << "3 number sum does not exist";
+    // }
+    if (findFourSum((size), sum, arr))
     {
-        cout << "3 number sum exists";
+        cout << "4 number sum exists";
     }
     else
     {
-        cout << "3 number sum does not exist";
+        cout << "4 number sum does not exist";
     }
     return 0;
 }
