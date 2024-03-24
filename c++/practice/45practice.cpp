@@ -5,35 +5,23 @@ using namespace std;
 
 int maxDiffBwElem1(int size, int array[], int pos)
 {
-    int suffix = array[size - 1];
-    int maxDiff = INT16_MIN, temp;
+    int maxDiff = INT16_MIN;
+    int maxR = array[size - 1];
+    int diff = 0;
     for (int i = size - 2; i >= pos - 1; i--)
     {
-        temp = abs((suffix - array[i]));
-        cout << temp;
-        if (array[i] > suffix)
+        diff = (array[i] - maxR);
+        if (diff > maxDiff)
         {
-            suffix = array[i];
+            maxDiff = diff;
         }
-        if (maxDiff < temp)
+        if (array[i] > maxR)
         {
-            maxDiff = temp;
+            maxR = array[i];
         }
-    }
+    } // 9,5,8,12,2,3,7,4
     cout << maxDiff;
 }
-// int maxDiffBwElem2(int size, int array[], int pos)
-// {
-//     int maxVal = INT16_MIN;
-//     for (int i = size - 1; i >= pos - 1; i--)
-//     {
-//         if (maxVal < array[i])
-//         {
-//             maxVal = array[i];
-//         }
-//     }
-//     cout << maxVal - array[pos - 1];
-// }//not possibile can the intial value can be max.
 
 int main()
 {
