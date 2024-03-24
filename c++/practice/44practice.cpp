@@ -14,7 +14,7 @@ int largestSumContigousSubArray(int size, vector<int> &array)
         if (prefix > MaxSubarray)
             MaxSubarray = prefix;
     }
-    cout << prefix;
+    cout << MaxSubarray;
 }
 
 int main()
