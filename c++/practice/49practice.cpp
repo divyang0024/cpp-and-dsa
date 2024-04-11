@@ -5,7 +5,6 @@ using namespace std;
 
 int findAMissingAndRepeatingVal(vector<int> arr)
 {
-    sort(arr.begin(), arr.end());
     int N = arr.size();
     // reducing the value by 1.
     for (int i = 0; i < N; i++)
@@ -28,7 +27,7 @@ int findAMissingAndRepeatingVal(vector<int> arr)
     // finding repeating element.
     for (int i = 0; i < N; i++)
     {
-        if (arr[i] % N == 2)
+        if (arr[i] / N == 2)
         {
             cout << "the repeating element is : " << i + 1 << endl;
             break;
