@@ -34,7 +34,7 @@ int findAllMissingNumbers(vector<int> arr)
     }
 }
 
-void findMajorityElement(vector<int> arr)
+void findMajorityElement(vector<int> arr)//leetcode problem 169
 {
     int candidate = 0, count = 0;
     for (int i = 0; i < arr.size(); i++)
