@@ -176,12 +176,19 @@ void aggressiveCowProblem()
         cin >> stalls[i];
     }
     int start = 1;
-    sort(stalls, stalls + n);
-    int end = stalls[n - 1] - start;
+    int end = 0;
+    int minDist = INT16_MAX;
     int cows;
     int ans;
     cout << "enter the number of cows : ";
     cin >> cows;
+    for (int i = 0; i < n; i++)
+    {
+        minDist = min(minDist, stalls[i]);
+        end = max(end, stalls[i]);
+    }
+    end = end - minDist;
+    cout << start << " " << end;
     while (start <= end)
     {
         int mid = start + (end - start) / 2;
@@ -189,13 +196,14 @@ void aggressiveCowProblem()
         int distance = stalls[0];
         for (int i = 1; i < n; i++)
         {
-            if (distance + mid <= stalls[i])
+            distance += mid;
+            if (distance < stalls[i])
             {
                 count++;
                 distance = stalls[i];
             }
         }
-        if (count >= cows)
+        if (count == cows)
         {
             ans = mid;
             start = mid + 1;
@@ -207,59 +215,12 @@ void aggressiveCowProblem()
     }
     cout << ans;
 }
-
-void kokoEatingBananaProblem()
-{
-    int n;
-    cout << "enter nummber of banana piles : ";
-    cin >> n;
-    int piles[n];
-    for (int i = 0; i < n; i++)
-    {
-        cout << "enter the number of banana in pile " << i + 1 << " : ";
-        cin >> piles[i];
-    }
-    cout << "number of hours koko needs to eat all the bananas : ";
-    int hours;
-    cin >> hours;
-    int start = INT16_MAX;
-    int end = 0;
-    int ans;
-    for (int i = 0; i < n; i++)
-    {
-        start = min(start, piles[i]);
-        end += piles[i];
-    }
-    while (start <= end)
-    {
-        int mid = start + (end - start) / 2;
-        int count = 0;
-        for (int i = 0; i < n; i++)
-        {
-            count += piles[i] / mid;
-            if (piles[i] % mid)
-                count += 1;
-        }
-        if (count <= hours)
-        {
-            ans = mid;
-            end = mid - 1;
-        }
-        else
-        {
-            start = mid + 1;
-        }
-    }
-    cout << ans;
-}
-
 
 int main()
 {
     // bookAllocationProblem();
     // painterPartitionProblem();
     // shipPackageProblem();
-    // aggressiveCowProblem();
-    // kokoEatingBananaProblem();
+    aggressiveCowProblem();
     return 0;
 }
