@@ -253,6 +253,36 @@ void kokoEatingBananaProblem()
     cout << ans;
 }
 
+void findMissingElem()
+{
+    int n;
+    cout << "enter size of array : ";
+    cin >> n;
+
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cout << "enter element at index " << i << " : ";
+        cin >> arr[i];
+    }
+    int start = 0;
+    int end = n;
+    int ans;
+    while (start < end)
+    {
+        int mid = start + (end - start) / 2;
+        if (arr[mid] > mid)
+        {
+            ans = mid;
+            end = mid;
+        }
+        else
+        {
+            start = mid + 1;
+        }
+    }
+    cout << ans;
+}
 
 int main()
 {
@@ -261,5 +291,6 @@ int main()
     // shipPackageProblem();
     // aggressiveCowProblem();
     // kokoEatingBananaProblem();
+    // findMissingElem();
     return 0;
 }
